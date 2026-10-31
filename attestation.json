@@ -1,9 +1,0 @@
-{
-  "pluginId": "neobase.sautstellaire",
-  "repo": "NDesumeur/neobase-plugin-saut-stellaire",
-  "version": "1.0.0",
-  "sha256": "efd614509f48b0d8b65162e4e1773a445152c5d73e6bed71ae75e816b7c7a3b1",
-  "approvedAt": "2026-10-31T16:22:01.591Z",
-  "neobase": ">=4.0.0",
-  "signature": "rG0OQTvN4Bxd1A6IJbz7KGyDDtPd87m4fFARReLeyUVmiHRzXB9qKRPlhkq9opd83O+YBLub0ubWCjMsUmtRDg=="
-}
