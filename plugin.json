@@ -1,0 +1,19 @@
+{
+  "id": "neobase.sautstellaire",
+  "name": "Saut stellaire",
+  "version": "1.0.0",
+  "author": "NDesumeur",
+  "description": "Un coureur sans fin : maintiens pour sauter plus haut, évite cristaux et météores, ramasse les étoiles.",
+  "icon": "icon.png",
+  "entry": "index.js",
+  "view": "saut-stellaire",
+  "neobase": ">=4.0.0",
+  "type": "app",
+  "category": "Jeux",
+  "mobile": false,
+  "system": false,
+  "dependencies": {},
+  "permissions": [
+    "full"
+  ]
+}
