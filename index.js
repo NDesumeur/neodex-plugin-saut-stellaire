@@ -117,10 +117,14 @@ function rnDraw() {
   const bands = ['#0b031c', '#120526', '#1a0833', '#240b40', '#2e0e4c'];
   bands.forEach((c, i) => px(g, c, -4, i * 24, W + 8, 24 + (i === 4 ? 40 : 0)));
   for (const s of rn.sky) { if (rn.mode === 'play') s[0] = (s[0] - rn.speed * (.05 + s[2] * .1) + W) % W; px(g, s[2] > .8 ? '#ffffff' : s[2] > .5 ? '#d9c6ff' : '#5e4d85', s[0], s[1]); }
-  g.fillStyle = '#3a2a6e'; g.beginPath(); g.arc(300, 34, 16, 0, 7); g.fill(); px(g, '#4a3c86', 290, 26, 8, 3); px(g, '#2b2468', 304, 40, 6, 3);
+  /*NEBULA*/ for (const [cx, cy, r, c] of [[90, 50, 46, 'rgba(160,60,200,.10)'], [150, 38, 34, 'rgba(60,120,220,.10)'], [60, 70, 30, 'rgba(255,90,217,.08)']]) for (let k = 3; k > 0; k--) { g.fillStyle = c; g.beginPath(); g.arc(cx + (rn.dist * .02 % 6), cy, r * k / 3, 0, 7); g.fill(); }
+  g.fillStyle = '#3a2a6e'; g.beginPath(); g.arc(300, 34, 16, 0, 7); g.fill(); px(g, '#4a3c86', 290, 26, 8, 3); px(g, '#2b2468', 304, 40, 6, 3); px(g, '#5a4aa8', 298, 20, 10, 2);
+  g.strokeStyle = 'rgba(217,198,255,.55)'; g.lineWidth = 2; g.beginPath(); g.ellipse(300, 36, 27, 6, -.3, 0, 7); g.stroke(); g.lineWidth = 1;
+  { const k = (rn.tick % 420) / 420; if (k < .2) { const x = 330 - k * 5 * 260, y = 8 + k * 5 * 60; for (let n = 0; n < 8; n++) px(g, 'rgba(255,255,255,' + (1 - n / 8) + ')', x + n * 3, y - n * .7, 2, 1); } }
   const hillOff = (rn.dist * .25) % 48;
   for (const [x, hh] of rn.hills) { const X = ((x - hillOff) % (W + 48) + W + 48) % (W + 48) - 48; g.fillStyle = '#1f0f3a'; g.beginPath(); g.moveTo(X, G); g.lineTo(X + 24, G - hh); g.lineTo(X + 48, G); g.fill(); }
-  px(g, '#2a1d52', -4, G, W + 8, H - G); px(g, '#8a5cf0', -4, G, W + 8, 1);
+  { const off2 = (rn.dist * .5) % 40; g.fillStyle = '#170a30'; g.beginPath(); g.moveTo(-4, G); for (let x = -40; x < W + 40; x += 20) { const X = x - off2, hh = 8 + ((Math.floor((x + rn.dist * .5) / 20) * 37) % 11); g.lineTo(X, G - hh); g.lineTo(X + 10, G - hh + 4); } g.lineTo(W + 44, G); g.fill(); }  // near ridge
+  px(g, '#2a1d52', -4, G, W + 8, H - G); px(g, '#8a5cf0', -4, G, W + 8, 1); px(g, '#b48cff', -4, G + 1, W + 8, 1); px(g, '#33236a', -4, G + 2, W + 8, 4); px(g, '#1b1038', -4, G + 14, W + 8, H - G - 14);
   for (let x = -(rn.dist % 16); x < W; x += 16) { px(g, '#3a2a6e', x, G + 5, 6, 1); px(g, '#231646', x + 8, G + 11, 4, 1); }
   for (const s of rn.stars) { const tw = (rn.tick >> 3) % 2; px(g, '#ffd07a', s.x - 1, s.y - 3, 3, 7); px(g, '#ffd07a', s.x - 3, s.y - 1, 7, 3); px(g, tw ? '#ffffff' : '#fff0c8', s.x, s.y, 1, 1); }
   for (const o of rn.obs) {
@@ -128,10 +132,13 @@ function rnDraw() {
       for (let k = 0; k < 10; k++) px(g, k < 4 ? '#ff9a3c' : '#7a3c10', o.x + o.w + k * 2, o.y + 2 + (k % 2), 2, 2);  // trail
       px(g, '#b8641c', o.x, o.y, o.w, o.h); px(g, '#ff9a3c', o.x + 1, o.y + 1, o.w - 4, 2); px(g, '#ffd07a', o.x + 2, o.y + 1, 2, 2);
     } else {
-      const y = G - o.h; px(g, '#1f8098', o.x, y + 2, o.w, o.h - 2); px(g, '#7fe0ee', o.x + 1, y, o.w - 2, o.h - 1); px(g, '#e0ffff', o.x + 1, y + 1, 1, Math.floor(o.h / 2)); px(g, '#1f8098', o.x + o.w - 2, y + 2, 1, o.h - 3);
+      const y = G - o.h; g.fillStyle = 'rgba(127,224,238,.12)'; g.fillRect(Math.round(o.x - 3), y - 3, o.w + 6, o.h + 3); px(g, 'rgba(127,224,238,.35)', o.x + o.w / 2 - 1, y - 3 - (rn.tick >> 4) % 2, 1, 2);
+      px(g, '#1f8098', o.x, y + 2, o.w, o.h - 2); px(g, '#7fe0ee', o.x + 1, y, o.w - 2, o.h - 1); px(g, '#e0ffff', o.x + 1, y + 1, 1, Math.floor(o.h / 2)); px(g, '#1f8098', o.x + o.w - 2, y + 2, 1, o.h - 3);
     }
   }
   const frame = !rn.onGround ? RN.jump : (rn.mode === 'play' && (rn.t >> 3) % 2) ? RN.run2 : RN.run1;
+  px(g, 'rgba(0,0,0,.35)', 31 + rn.y / 8, G + 1, Math.max(4, 8 - rn.y / 8), 2);
+  if (rn.mode === 'play') for (let k = 1; k <= 4; k++) px(g, 'rgba(255,90,217,' + (.22 - k * .045) + ')', 30 - k * 5, G - 6 - rn.y + (k % 2), 4, 3);  // speed trail
   if (rn.mode !== 'over' || (rn.tick >> 2) % 2) sprite(g, frame, 30, G - 10 - rn.y, RN.pal);
   for (const p of rn.parts) px(g, p.c, p.x, p.y, 2, 2);
   g.restore();

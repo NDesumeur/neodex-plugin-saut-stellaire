@@ -1,7 +1,7 @@
 {
   "id": "neobase.sautstellaire",
   "name": "Saut stellaire",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "NDesumeur",
   "description": "Un coureur sans fin : maintiens pour sauter plus haut, évite cristaux et météores, ramasse les étoiles.",
   "icon": "icon.png",
