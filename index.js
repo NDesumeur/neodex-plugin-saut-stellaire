@@ -1,6 +1,6 @@
 // Saut stellaire : ton appli d'origine (HTML et code inchangés), livrée en plugin.
 // Ses données sont dans le dossier du plugin, que NeoBase sauvegarde (synchro cloud et sauvegardes) ; à la première ouverture elle reprend ce que tu avais dans NeoBase.
-// Elle demande l'accès complet pour utiliser les outils d'interface de NeoBase. NeoBase ne l'ouvre que si elle est signée.
+// Elle tourne dans le bac à sable de NeoBase, avec ses outils d'interface (ctx.host) et seulement les autorisations de son plugin.json.
 const HTML = "<div class=\"appWrap\">\n      <div class=\"agHead\"><span class=\"label\">Saut stellaire</span><span class=\"hint\" id=\"rnInfo\"></span></div>\n      <div class=\"gameBox\"><canvas id=\"rnCanvas\" width=\"384\" height=\"144\"></canvas></div>\n      <div class=\"hint\">Espace, flèche du haut ou clic : sauter (maintenir pour sauter plus haut) · P ou Échap : pause. Saute par-dessus les cristaux, reste au sol sous les météores, attrape les étoiles.</div>\n    </div>";
 /*CSS-MOVED*/ const CSS = `.gameBox{display:grid;place-items:center;padding:10px;background:#05010b;box-shadow:0 0 0 3px var(--line2)}
 .gameBox canvas{width:min(100%,1152px);aspect-ratio:384/144;image-rendering:pixelated;cursor:var(--cp,pointer)}
