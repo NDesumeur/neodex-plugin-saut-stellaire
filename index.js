@@ -1,14 +1,14 @@
 // Saut stellaire : ton appli d'origine (HTML et code inchangés), livrée en plugin.
-// Ses données sont dans le dossier du plugin, que NeoBase sauvegarde (synchro cloud et sauvegardes) ; à la première ouverture elle reprend ce que tu avais dans NeoBase.
-// Elle tourne dans le bac à sable de NeoBase, avec ses outils d'interface (ctx.host) et seulement les autorisations de son plugin.json.
+// Ses données sont dans le dossier du plugin, que NeoDex sauvegarde (synchro cloud et sauvegardes) ; à la première ouverture elle reprend ce que tu avais dans NeoDex.
+// Elle tourne dans le bac à sable de NeoDex, avec ses outils d'interface (ctx.host) et seulement les autorisations de son plugin.json.
 const HTML = "<div class=\"appWrap\">\n      <div class=\"agHead\"><span class=\"label\">Saut stellaire</span><span class=\"hint\" id=\"rnInfo\"></span></div>\n      <div class=\"gameBox\"><canvas id=\"rnCanvas\" width=\"384\" height=\"144\"></canvas></div>\n      <div class=\"hint\">Espace, flèche du haut ou clic : sauter (maintenir pour sauter plus haut) · P ou Échap : pause. Saute par-dessus les cristaux, reste au sol sous les météores, attrape les étoiles.</div>\n    </div>";
 /*CSS-MOVED*/ const CSS = `.gameBox{display:grid;place-items:center;padding:10px;background:#05010b;box-shadow:0 0 0 3px var(--line2)}
 .gameBox canvas{width:min(100%,1152px);aspect-ratio:384/144;image-rendering:pixelated;cursor:var(--cp,pointer)}
 .gameBox.tall canvas{width:auto;height:min(720px,72vh);aspect-ratio:240/320}
-`;  // le style de ce plugin (il utilise les variables du thème de NeoBase)
+`;  // le style de ce plugin (il utilise les variables du thème de NeoDex)
 export default async function (ctx) {
   const view = ctx.view;
-  if (!ctx.host) { view.textContent = "Ce plugin doit être approuvé par NeoBase pour s'ouvrir."; return; }
+  if (!ctx.host) { view.textContent = "Ce plugin doit être approuvé par NeoDex pour s'ouvrir."; return; }
   const host = ctx.host, { el, toast, sfx, ask, newTab, pixIcon, PIX, WX } = host;
   const folder = ctx.folder, legacy = ctx.legacy || {};
   ctx.host.addStyle(CSS);
@@ -65,7 +65,7 @@ function rnStart() {
     sky: Array.from({length: 70}, () => [Math.random() * RN.W, Math.random() * 95, Math.random()]),
     hills: Array.from({length: 12}, (_, i) => [i * 48 + Math.random() * 20, 14 + Math.random() * 22])});
   $('rnInfo').textContent = 'Record : ' + (games?.best.runner ?? 0);
-  gameLoop(rn, 'neodyme:runner', rnUpdate, rnDraw);
+  gameLoop(rn, 'neodex:runner', rnUpdate, rnDraw);
 }
 const rnScore = () => Math.floor(rn.dist / 10) + rn.coins * 25;
 function rnPress(down) {
@@ -179,5 +179,5 @@ document.addEventListener('keyup', e => { const k = e.key.length === 1 ? e.key.t
 $('rnCanvas').onpointerdown = () => rnPress(true);
 $('rnCanvas').onpointerup = $('rnCanvas').onpointerleave = () => rnPress(false);  // (non indenté : les textes sur plusieurs lignes restent exactement les tiens)
   // ---- fin ----
-  ctx.onOpen(() => { rn ? gameLoop(rn, 'neodyme:runner', rnUpdate, rnDraw) : rnStart(); });
+  ctx.onOpen(() => { rn ? gameLoop(rn, 'neodex:runner', rnUpdate, rnDraw) : rnStart(); });
 }
