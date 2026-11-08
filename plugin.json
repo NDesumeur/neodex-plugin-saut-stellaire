@@ -1,7 +1,7 @@
 {
   "id": "neodex.sautstellaire",
   "name": "Saut stellaire",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "author": "NDesumeur",
   "description": "Course sans fin sur une planète lointaine : saute par-dessus les cristaux (maintiens pour sauter plus haut, double saut en l'air), reste au sol sous les météores, attrape les étoiles à la suite pour un multiplicateur jusqu'à ×4 et un bouclier pour encaisser un choc. La vitesse monte jusqu'à plus du double ; score à la distance et aux étoiles, record gardé.",
   "icon": "icon.png",
