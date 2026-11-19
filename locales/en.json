@@ -21,7 +21,6 @@
  "RECORDS": "RECORDS",
  "Record": "Record",
  "Record :": "Record:",
- "Record.": "Record.",
  "SAUT STELLAIRE": "STELLAR JUMP",
  "SCORE": "SCORE",
  "Saut stellaire": "Stellar Leap",
@@ -88,5 +87,6 @@
  "Espace pour reprendre": "Space to resume",
  "étoiles ·": "stars ·",
  "Espace pour rejouer": "Space to play again",
- "saut stellaire planètes": "star jump planets"
+ "saut stellaire planètes": "star jump planets",
+ "Rien n'est synchronisé : tes records restent sur cet appareil.": "Nothing is synced: your records stay on this device."
 }
