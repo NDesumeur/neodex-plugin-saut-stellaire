@@ -1,9 +1,9 @@
 {
   "id": "neodex.sautstellaire",
   "name": "Saut stellaire",
-  "version": "1.4.1",
+  "version": "2.0.0",
   "author": "NDesumeur",
-  "description": "Course sans fin sur une planète lointaine : saute par-dessus les cristaux (maintiens pour sauter plus haut, double saut en l'air), reste au sol sous les météores, attrape les étoiles à la suite pour un multiplicateur jusqu'à ×4 et un bouclier pour encaisser un choc. La vitesse monte jusqu'à plus du double ; score à la distance et aux étoiles, record gardé. Tous les 1000 m, une nouvelle planète (glace, lave, géante gazeuse). Pixel art des jeux récents, astronaute plus grand, gros textes, plein écran.",
+  "description": "Course sans fin redessinée de zéro, à travers cinq biomes qui changent tous les 600 m : désert rouge, forêt de cristal, banquise, volcans, jungle alien. Saute (double saut, maintiens pour monter plus haut), reste au sol sous les météores, attrape les étoiles en série. Le Dévoreur te poursuit : chaque étoile le repousse. Pouvoirs à acheter avec les étoiles (aimant, triple saut, bouclier, seconde chance) et défi du jour.",
   "icon": "icon.png",
   "entry": "index.js",
   "view": "saut-stellaire",

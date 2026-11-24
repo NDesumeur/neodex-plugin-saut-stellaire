@@ -1,45 +1,48 @@
-# Saut stellaire (Star jump)
+# Saut stellaire
 
-An endless run on a distant planet: your hero runs on their own, and it is up to you to jump over crystals at the right moment, stay on the ground under meteors and catch the stars. The speed rises as you go.
+An endless run through five biomes: your astronaut runs on their own, it's up to you to jump at the right time, stay on the ground under meteors and grab the stars. The game was redrawn from scratch in 2.0.0.
 
 *Version française : [README.md](README.md)*
 
 ## Controls
 
 - **Space**, **↑** or **click**: jump. **Hold** to jump higher.
-- **Press again in the air**: double jump.
+- **Press again in the air**: double jump (triple with the power).
 - **↓**: drop down fast.
-- **P** or **Escape**: pause.
-- After a fall, **Space** starts a new run.
+- **P** or **Esc**: pause.
+- After a crash, **Space** starts a new run.
+
+## The five biomes
+
+Every 600 m, the scenery changes: **red desert**, **crystal forest**, **ice floe** (with an aurora), **volcanoes**, **alien jungle**. Each biome has its own sky, celestial body, hills, ground, obstacles and weather (dust, sparkles, snow, embers, spores). A bar at the top shows the distance to the next biome.
 
 ## Obstacles
 
-- **Crystals**: they stick out of the ground; jump over them.
-- **Meteors**: they fly at head height after the first moments; stay on the ground so they pass over you.
+- **Ground obstacles** (rocks, crystals, ice spikes, plants): jump over them.
+- **Meteors** fly at head height: stay on the ground so they pass over you.
 
-The gap between two obstacles always leaves time for a jump at the current speed, but it shrinks with distance. The speed rises little by little, to more than twice the starting speed.
+The gap between two obstacles always leaves time for a jump. The speed rises little by little, up to more than twice the starting speed.
 
-## Stars and bonuses
+## The Devourer
 
-- **Stars** float alone or in threes. Caught in a row, they form a **streak**: the multiplier rises by 1 every 5 stars, up to ×4. Letting a star go by resets the streak.
-- The **shield** takes one hit for you; one appears now and then when you do not have one.
+At 800 m, then every 1500 m, **the Devourer** comes in from the left and chases you for 30 seconds. **Each star you grab pushes it back**; the shield does not stop it. If it gives up: **+300 points**.
+
+## Stars, powers and daily challenge
+
+- **Stars** grabbed in a row make a **streak**: ×2, ×3 then ×4. At the end of the run, they go **to the bank**.
+- With the bank, buy **powers**: **Magnet** (3 levels), **Triple jump**, **Shield** at the start, **Second chance** (keep going once after a crash).
+- The **Daily challenge** button starts the same course for everyone that day, with a goal (distance and stars). Done: **+100 stars**, once a day.
 
 ## Points
 
-The score is 1 point per 10 metres run, plus 25 points per star times the current multiplier. A banner marks every thousand metres.
+1 point per 10 metres, plus 25 points per star (multiplied by the streak), plus 300 per Devourer lost.
 
 ## Data and sync
 
-Your record is stored by NeoDex, backed up and synced between your PCs when sync is on. On first launch, the plugin picks up what you already had in NeoDex.
+Your record is stored by NeoDex, backed up and synced between your PCs when sync is on.
 
 ## Install
 
 In NeoDex: **NeoStore → Discover → Saut stellaire → Install**.
 
 Building a plugin: see the [NeoDex SDK](https://github.com/NDesumeur/neodex-sdk).
-
-## Planets, pixel art and full screen
-
-- **Every 1000 m, a new planet**: the violet planet, then ice, lava and a gas giant. The sky, mountains, ground and big planet change colours.
-- **The style of the recent games**: pixel art frames and buttons, pixel font, an astronaut twice as big, bigger text. Records: best score, longest distance and planet reached.
-- **Full screen**: the "FULL SCREEN" button. The run takes the full width of the window.

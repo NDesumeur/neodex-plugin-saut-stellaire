@@ -1,45 +1,48 @@
 # Saut stellaire
 
-Une course sans fin sur une planète lointaine : ton héros court tout seul, à toi de sauter au bon moment par-dessus les cristaux, de rester au sol sous les météores et d'attraper les étoiles. La vitesse augmente à mesure que tu avances.
+Une course sans fin à travers cinq biomes : ton astronaute court tout seul, à toi de sauter au bon moment, de rester au sol sous les météores et d'attraper les étoiles. Le jeu a été redessiné de zéro en 2.0.0.
 
 *English version: [README.en.md](README.en.md)*
 
 ## Commandes
 
 - **Espace**, **↑** ou **clic** : sauter. **Maintiens** pour sauter plus haut.
-- **Rappuie en l'air** : double saut.
+- **Rappuie en l'air** : double saut (triple avec le pouvoir).
 - **↓** : retomber vite.
 - **P** ou **Échap** : pause.
 - Après une chute, **Espace** relance une course.
 
+## Les cinq biomes
+
+Tous les 600 m, le décor change : **désert rouge**, **forêt de cristal**, **banquise** (avec une aurore), **volcans**, **jungle alien**. Chaque biome a son ciel, son astre, ses reliefs, son sol, ses obstacles et sa météo (poussière, éclats, neige, braises, spores). Une barre en haut montre la distance jusqu'au biome suivant.
+
 ## Les obstacles
 
-- **Cristaux** : ils sortent du sol, saute par-dessus.
-- **Météores** : ils filent à hauteur de tête après les premiers instants ; reste au sol pour qu'ils passent au-dessus de toi.
+- Les **obstacles au sol** (rochers, cristaux, pics de glace, plantes) : saute par-dessus.
+- Les **météores** filent à hauteur de tête : reste au sol pour qu'ils passent au-dessus de toi.
 
-L'écart entre deux obstacles laisse toujours le temps d'un saut à la vitesse du moment, mais il se réduit avec la distance. La vitesse monte peu à peu, jusqu'à plus du double de celle du départ.
+L'écart entre deux obstacles laisse toujours le temps d'un saut. La vitesse monte peu à peu, jusqu'à plus du double de celle du départ.
 
-## Étoiles et bonus
+## Le Dévoreur
 
-- Les **étoiles** flottent seules ou par trois. Attrapées à la suite, elles forment une **série** : le multiplicateur monte de 1 toutes les 5 étoiles, jusqu'à ×4. Laisser passer une étoile remet la série à zéro.
-- Le **bouclier** encaisse un choc à ta place ; il en apparaît un de temps en temps quand tu n'en as pas.
+À 800 m, puis tous les 1500 m, **le Dévoreur** arrive par la gauche et te poursuit pendant 30 secondes. **Chaque étoile ramassée le repousse** ; le bouclier ne l'arrête pas. S'il abandonne : **+300 points**.
+
+## Étoiles, pouvoirs et défi du jour
+
+- Les **étoiles** attrapées à la suite forment une **série** : ×2, ×3 puis ×4. En fin de course, elles vont **en banque**.
+- Avec la banque, achète des **pouvoirs** : **Aimant** (3 niveaux), **Triple saut**, **Bouclier** au départ, **Seconde chance** (repartir une fois après un choc).
+- Le bouton **Défi du jour** lance le même parcours pour tout le monde ce jour-là, avec un objectif (distance et étoiles). Réussi : **+100 étoiles**, une fois par jour.
 
 ## Points
 
-Le score vaut 1 point par 10 mètres parcourus, plus 25 points par étoile multipliés par le multiplicateur du moment. Une bannière salue chaque millier de mètres.
+1 point par 10 mètres, plus 25 points par étoile (multipliés par la série), plus 300 par Dévoreur semé.
 
 ## Données et synchronisation
 
-Ton record est enregistré par NeoDex, sauvegardé et synchronisé entre tes PC si la synchro est activée. Au premier lancement, le plugin reprend ce que tu avais déjà dans NeoDex.
+Ton record est enregistré par NeoDex, sauvegardé et synchronisé entre tes PC si la synchro est activée.
 
 ## Installer
 
 Dans NeoDex : **NeoStore → À découvrir → Saut stellaire → Installer**.
 
 Développer un plugin : voir le [SDK NeoDex](https://github.com/NDesumeur/neodex-sdk).
-
-## Planètes, pixel art et plein écran
-
-- **Tous les 1000 m, une nouvelle planète** : la planète violette, puis la glace, la lave et une géante gazeuse. Le ciel, les montagnes, le sol et la grosse planète changent de couleurs.
-- **Le style des jeux récents** : cadres et boutons en pixel art, police pixel, astronaute deux fois plus grand, textes plus gros. Records : meilleur score, plus longue distance et planète atteinte.
-- **Plein écran** : bouton « PLEIN ÉCRAN ». La course prend toute la largeur de la fenêtre.
