@@ -1,7 +1,7 @@
 {
   "id": "neodex.sautstellaire",
   "name": "Saut stellaire",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": "NDesumeur",
   "description": "Course sans fin redessinée de zéro, à travers cinq biomes qui changent tous les 600 m : désert rouge, forêt de cristal, banquise, volcans, jungle alien. Saute (double saut, maintiens pour monter plus haut), reste au sol sous les météores, attrape les étoiles en série. Le Dévoreur te poursuit : chaque étoile le repousse. Pouvoirs à acheter avec les étoiles (aimant, triple saut, bouclier, seconde chance) et défi du jour.",
   "icon": "icon.png",
@@ -10,7 +10,10 @@
   "neobase": ">=4.0.0",
   "type": "app",
   "category": "Jeux",
-  "compatibility": ["windows", "linux"],
+  "compatibility": [
+    "windows",
+    "linux"
+  ],
   "syncMode": "aucune",
   "syncInfo": "Rien n'est synchronisé : tes records restent sur cet appareil.",
   "mobile": false,
@@ -19,5 +22,63 @@
   "sdk": "2.1.0",
   "permissions": [
     "storage"
+  ],
+  "succes": [
+    {
+      "id": "m600",
+      "nom": "Hors du désert",
+      "texte": "Courir 600 m en une partie"
+    },
+    {
+      "id": "m1200",
+      "nom": "Sur la glace",
+      "texte": "Courir 1 200 m en une partie"
+    },
+    {
+      "id": "m2400",
+      "nom": "Jungle alien",
+      "texte": "Courir 2 400 m et voir le cinquième biome"
+    },
+    {
+      "id": "m5000",
+      "nom": "Infatigable",
+      "texte": "Courir 5 000 m en une partie",
+      "cache": true
+    },
+    {
+      "id": "boss",
+      "nom": "Chasseur de géants",
+      "texte": "Battre un boss"
+    },
+    {
+      "id": "boss10",
+      "nom": "Tombeur de boss",
+      "texte": "Battre 10 boss"
+    },
+    {
+      "id": "defi",
+      "nom": "Défi du jour",
+      "texte": "Réussir un défi du jour"
+    },
+    {
+      "id": "equipe",
+      "nom": "Tout équipé",
+      "texte": "Acheter toutes les améliorations"
+    }
+  ],
+  "records": [
+    {
+      "id": "score",
+      "nom": "Meilleur score",
+      "sens": "haut",
+      "format": "nombre"
+    },
+    {
+      "id": "distance",
+      "nom": "Plus longue course",
+      "sens": "haut",
+      "format": "nombre",
+      "unite": "m"
+    }
   ]
 }

@@ -121,5 +121,22 @@
  "saut": "jump",
  "biomes": "biomes",
  "Espace, flèche du haut ou clic : sauter (maintenir pour sauter plus haut, rappuyer en l'air pour un double saut) · bas : retomber vite · P ou Échap : pause. Saute par-dessus les obstacles, reste au sol sous les météores, attrape les étoiles à la suite pour multiplier les points, et le bouclier pour encaisser un choc.": "Space, up arrow or click: jump (hold to jump higher, press again in the air for a double jump) · down: fall quickly · P or Esc: pause. Jump over the obstacles, stay on the ground under the meteors, grab the stars in a row to multiply the points, and the shield to absorb a shock.",
- "Course sans fin redessinée de zéro, à travers cinq biomes qui changent tous les 600 m : désert rouge, forêt de cristal, banquise, volcans, jungle alien. Saute (double saut, maintiens pour monter plus haut), reste au sol sous les météores, attrape les étoiles en série. Le Dévoreur te poursuit : chaque étoile le repousse. Pouvoirs à acheter avec les étoiles (aimant, triple saut, bouclier, seconde chance) et défi du jour.": "Endless run redrawn from scratch, through five biomes that change every 600 m: red desert, crystal forest, ice floe, volcanoes, alien jungle. Jump (double jump, hold to go higher), stay on the ground under meteors, grab stars in a row. The Devourer chases you: each star pushes it back. Powers to buy with stars (magnet, triple jump, shield, second chance) and a daily challenge."
+ "Course sans fin redessinée de zéro, à travers cinq biomes qui changent tous les 600 m : désert rouge, forêt de cristal, banquise, volcans, jungle alien. Saute (double saut, maintiens pour monter plus haut), reste au sol sous les météores, attrape les étoiles en série. Le Dévoreur te poursuit : chaque étoile le repousse. Pouvoirs à acheter avec les étoiles (aimant, triple saut, bouclier, seconde chance) et défi du jour.": "Endless run redrawn from scratch, through five biomes that change every 600 m: red desert, crystal forest, ice floe, volcanoes, alien jungle. Jump (double jump, hold to go higher), stay on the ground under meteors, grab stars in a row. The Devourer chases you: each star pushes it back. Powers to buy with stars (magnet, triple jump, shield, second chance) and a daily challenge.",
+ "Hors du désert": "Out of the desert",
+ "Courir 600 m en une partie": "Run 600 m in one game",
+ "Sur la glace": "On the ice",
+ "Courir 1 200 m en une partie": "Run 1,200 m in one game",
+ "Courir 2 400 m et voir le cinquième biome": "Run 2,400 m and see the fifth biome",
+ "Infatigable": "Tireless",
+ "Courir 5 000 m en une partie": "Run 5,000 m in one game",
+ "Chasseur de géants": "Giant hunter",
+ "Battre un boss": "Beat a boss",
+ "Tombeur de boss": "Boss slayer",
+ "Battre 10 boss": "Beat 10 bosses",
+ "Réussir un défi du jour": "Complete a daily challenge",
+ "Tout équipé": "Fully equipped",
+ "Acheter toutes les améliorations": "Buy every upgrade",
+ "Meilleur score": "Best score",
+ "Plus longue course": "Longest run",
+ "m": "m"
 }

@@ -309,6 +309,9 @@ export default async function (ctx) {
   const saveGames = () => { clearTimeout(gamesTimer); gamesTimer = setTimeout(() => { gamesTimer = null; folder.write('games', games).catch(() => {}); }, 500); };
   const best = (k, v, higher = true) => { const b = games.best[k]; if (b == null || (higher ? v > b : v < b)) { games.best[k] = v; saveGames(); return true; } return false; };
   const gstore = (k, init) => (games[k] ??= init);  // la section d'un jeu
+  // les trophées de NeoDex (3.4.8 et plus) : succès et records déclarés dans plugin.json ; sur un NeoDex plus ancien, rien ne se passe
+  const trophy = id => { ctx.games?.unlock(id).catch(() => {}); };
+  const trophyRecord = (id, v) => { if (v != null && Number.isFinite(+v)) ctx.games?.record(id, +v).catch(() => {}); };
 function gameLoop(st, appKey, update, draw) {
   cancelAnimationFrame(st.raf);
   const STEP = 1000 / 60; let acc = 0, last = performance.now();
@@ -632,6 +635,7 @@ document.addEventListener('keyup', e => { const k = e.key.length === 1 ? e.key.t
 $('rnCanvas').onpointerdown = () => rnPress(true);
 $('rnCanvas').onpointerup = $('rnCanvas').onpointerleave = () => rnPress(false);
 function rnStats() {
+  setTimeout(rnTrophies);
   const dl = rns.daily.day === rnDay() ? (rns.daily.done ? 'réussi' : (rns.daily.best || 0) + ' m') : '—';
   $('rnStats').replaceChildren(...[['Record', games.best.runner ?? 0], ['Plus loin', (games.best.runnerM ?? 0) + ' m'], ['Dévoreurs semés', rns.bosses || 0], ['Défi du jour', dl]].flatMap(([k, v]) => [el('span', '', k), el('b', '', String(v))]));
   $('rnBank').textContent = 'Étoiles en banque : ' + rns.bank;
@@ -667,5 +671,12 @@ $('rnFs').onclick = () => { $('rnFs').blur(); try { document.fullscreenElement ?
 }
 $('rnCanvas').__rn = {st: () => rn, go: m => { rn.dist = m * 10; }, biome: () => RN_BIOMES[rnBiomeAt(Math.floor(rn.dist / 10))].name, rns, info: () => rnStats()};
   // ---- fin ----
+  // les trophées, tirés des statistiques et des records gardés (aussi à l'ouverture : ce qui a été fait avant compte)
+  function rnTrophies() {
+    const b = games.best, m = b.runnerM || 0, up = RN_UP.every(u => rnLv(u.id) >= u.price.length), sig = [b.runner, m, rns.bosses, rns.daily.done, up].join(); if (sig === rnTrophies.sig) return; rnTrophies.sig = sig;
+    trophyRecord('score', b.runner || null); trophyRecord('distance', m || null);
+    if (m >= 600) trophy('m600'); if (m >= 1200) trophy('m1200'); if (m >= 2400) trophy('m2400'); if (m >= 5000) trophy('m5000');
+    if (rns.bosses >= 1) trophy('boss'); if (rns.bosses >= 10) trophy('boss10'); if (rns.daily.done) trophy('defi'); if (up) trophy('equipe');
+  }
   ctx.onOpen(() => { rn ? gameLoop(rn, 'neodex:runner', rnUpdate, rnDraw) : rnStart(); rnStats(); });
 }
