@@ -1,9 +1,9 @@
 {
   "pluginId": "neodex.sautstellaire",
   "repo": "NDesumeur/neodex-plugin-saut-stellaire",
-  "version": "2.0.0",
-  "sha256": "24284e2f5d375031240f9de754f9cd96153c00e58bf48792f8ba6685b3de9c03",
-  "approvedAt": "2026-11-24T15:56:16.316Z",
+  "version": "2.1.0",
+  "sha256": "3a8f96eb01307dee93a2631209dddf5e9abfb4decc8d2f90eff4d3695451fa64",
+  "approvedAt": "2026-11-25T17:16:45.920Z",
   "neobase": ">=4.0.0",
-  "signature": "2LgCekEJw7l89Bx5yM28y0yf5XfUiydOwHiMsh25KAp8zHky4ooJqVIY9WtqQZ0lKfIBy3qkyVlQtvFwt1abCg=="
+  "signature": "FboCgblnh7hQY7M0ooj2pUdYd15TNOcHtsmrGJiZDZfrC8LBJMzQB4DH3nEuhRPXCPOG0wGxOkqJrY8yvu+hCA=="
 }
